@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2A73F0E2BDF785700412718 /* PlainChat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F0D2BDF785700412718 /* PlainChat+CoreDataClass.swift */; };
+		F2A73F0F2BDF785700412718 /* PlainChat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F0D2BDF785700412718 /* PlainChat+CoreDataClass.swift */; };
+		F2A73F102BDF785700412718 /* PlainChat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F0D2BDF785700412718 /* PlainChat+CoreDataClass.swift */; };
+		F2A73F122BDF787800412718 /* PlainChat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F112BDF787800412718 /* PlainChat+CoreDataProperties.swift */; };
+		F2A73F132BDF787800412718 /* PlainChat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F112BDF787800412718 /* PlainChat+CoreDataProperties.swift */; };
+		F2A73F142BDF787800412718 /* PlainChat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F112BDF787800412718 /* PlainChat+CoreDataProperties.swift */; };
+		F2A73F162BDF7E6800412718 /* PresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A73F152BDF7E6800412718 /* PresetView.swift */; };
+		F2A73F192BDF7EBE00412718 /* ChatPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E53A929DC155B0022E979 /* ChatPreset.swift */; };
+		F2A73F1A2BDF7EC100412718 /* ChatPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58E53A929DC155B0022E979 /* ChatPreset.swift */; };
 		F53D790C2A00B5CB00CBFAD1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53D790B2A00B5CB00CBFAD1 /* CloudKit.framework */; };
 		F53D790F2A03FA8200CBFAD1 /* LottieSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = F53D790E2A03FA8200CBFAD1 /* LottieSwiftUI */; };
 		F53D79172A062AE500CBFAD1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D79162A062AE500CBFAD1 /* KeyboardViewController.swift */; };
@@ -178,6 +187,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F2A73F0D2BDF785700412718 /* PlainChat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlainChat+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F2A73F112BDF787800412718 /* PlainChat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlainChat+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F2A73F152BDF7E6800412718 /* PresetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetView.swift; sourceTree = "<group>"; };
 		F53D790B2A00B5CB00CBFAD1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		F53D79142A062AE500CBFAD1 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53D79162A062AE500CBFAD1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -472,6 +484,8 @@
 				F5E47EC729B497FB0083BB31 /* Message+CoreDataProperties.swift */,
 				F5E47EC829B497FB0083BB31 /* Chat+CoreDataClass.swift */,
 				F5E47EC929B497FB0083BB31 /* Chat+CoreDataProperties.swift */,
+				F2A73F0D2BDF785700412718 /* PlainChat+CoreDataClass.swift */,
+				F2A73F112BDF787800412718 /* PlainChat+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -548,6 +562,7 @@
 				F5E47EF729B5B2320083BB31 /* TintSelector.swift */,
 				F5E47EF329B5AC380083BB31 /* SettingsView.swift */,
 				F5E3D9AC2A271DFD0004736E /* ShareExtensionIntroduction.swift */,
+				F2A73F152BDF7E6800412718 /* PresetView.swift */,
 				F5E3D9AE2A271E2F0004736E /* KeyboardExtensionIntroduction.swift */,
 				F5E3D9B02A27434E0004736E /* KeyboardExtensionConfigIntroduction.swift */,
 				F543A92629C444AC000C61B5 /* AcknowledgmentView.swift */,
@@ -754,6 +769,7 @@
 				F5E3D9932A2597A30004736E /* SharedUserDefaults.swift in Sources */,
 				F53D79172A062AE500CBFAD1 /* KeyboardViewController.swift in Sources */,
 				F53D79202A0BCA1F00CBFAD1 /* KeyboardView.swift in Sources */,
+				F2A73F102BDF785700412718 /* PlainChat+CoreDataClass.swift in Sources */,
 				F5E3D9912A25978F0004736E /* Haptics.swift in Sources */,
 				F5E3D9862A24B2080004736E /* Message+CoreDataProperties.swift in Sources */,
 				F5E3D9882A24B20D0004736E /* Chat+CoreDataProperties.swift in Sources */,
@@ -762,8 +778,10 @@
 				F5E3D98D2A24BE250004736E /* SettingsFeature.swift in Sources */,
 				F5E3D9942A2597A60004736E /* Persistence.swift in Sources */,
 				F5E3D9992A25982C0004736E /* MessageContent.swift in Sources */,
+				F2A73F142BDF787800412718 /* PlainChat+CoreDataProperties.swift in Sources */,
 				F5E3D9952A2597AC0004736E /* AppGroup.swift in Sources */,
 				F5E3D9902A2597400004736E /* View+Extensions.swift in Sources */,
+				F2A73F192BDF7EBE00412718 /* ChatPreset.swift in Sources */,
 				F5E3D98B2A24BE1C0004736E /* ChatFeature.swift in Sources */,
 				F5E3D9832A2483140004736E /* KeyboardViewModel.swift in Sources */,
 				F5E3D98A2A24BE170004736E /* EssentialFeature.swift in Sources */,
@@ -785,6 +803,7 @@
 				F5F290E329D92AF9001F6648 /* Persistence.swift in Sources */,
 				F5F290E829DA6A38001F6648 /* SettingsFeature.swift in Sources */,
 				F58E539C29DBF7950022E979 /* AppGroup.swift in Sources */,
+				F2A73F0F2BDF785700412718 /* PlainChat+CoreDataClass.swift in Sources */,
 				F5F290EC29DA6A74001F6648 /* ChatGPTAdapter.swift in Sources */,
 				F5F290EB29DA6A62001F6648 /* EssentialFeature.swift in Sources */,
 				F567A33F29D6CD9000057582 /* Chat+CoreDataClass.swift in Sources */,
@@ -793,8 +812,10 @@
 				F58E53A329DBFDC00022E979 /* View+Extensions.swift in Sources */,
 				F567A32629D693EC00057582 /* ShareView.swift in Sources */,
 				F58E53A829DBFF000022E979 /* SplashCodeSyntaxHighlighter.swift in Sources */,
+				F2A73F132BDF787800412718 /* PlainChat+CoreDataProperties.swift in Sources */,
 				F58E53A229DBFCD50022E979 /* MessageContent.swift in Sources */,
 				F567A34B29D6DC4C00057582 /* Haptics.swift in Sources */,
+				F2A73F1A2BDF7EC100412718 /* ChatPreset.swift in Sources */,
 				F567A33E29D6CD9000057582 /* Message+CoreDataProperties.swift in Sources */,
 				F567A31929D6935D00057582 /* HostingShareViewController.swift in Sources */,
 				F567A34829D6D4E000057582 /* AssisChat.xcdatamodeld in Sources */,
@@ -820,6 +841,7 @@
 				F5E47EEC29B4EA0A0083BB31 /* MessageFeature.swift in Sources */,
 				F5E47EFA29B5B6470083BB31 /* ChatSourceConfigView.swift in Sources */,
 				F543A92729C444AC000C61B5 /* AcknowledgmentView.swift in Sources */,
+				F2A73F0E2BDF785700412718 /* PlainChat+CoreDataClass.swift in Sources */,
 				F5E47EE729B4E8FB0083BB31 /* ChattingFeature.swift in Sources */,
 				F5FFE97F29FA6C6200AD4C91 /* QRCodeScanningView.swift in Sources */,
 				F58E53A129DBFC720022E979 /* MessageContent.swift in Sources */,
@@ -834,6 +856,7 @@
 				F5B2554D29B8A56D0008DAA3 /* SelectChatHintView.swift in Sources */,
 				F5E47EE929B4E9090083BB31 /* ChattingView.swift in Sources */,
 				F5E47EFF29B5D8B80083BB31 /* View+Extensions.swift in Sources */,
+				F2A73F122BDF787800412718 /* PlainChat+CoreDataProperties.swift in Sources */,
 				F5E47EF429B5AC380083BB31 /* SettingsView.swift in Sources */,
 				F5E47EE429B49DF90083BB31 /* ChatIconSelector.swift in Sources */,
 				F5E47F0F29B708D00083BB31 /* EditChatView.swift in Sources */,
@@ -860,6 +883,7 @@
 				F5E47EDF29B49CCA0083BB31 /* ColorSelector.swift in Sources */,
 				F58E539B29DBF7380022E979 /* AppGroup.swift in Sources */,
 				F55B65B229ED0D4900F93F6D /* ClaudeAdapter.swift in Sources */,
+				F2A73F162BDF7E6800412718 /* PresetView.swift in Sources */,
 				F5FFE97129F658F200AD4C91 /* MacOSSettingsView.swift in Sources */,
 				F55B65B629EFD33A00F93F6D /* Clipboard.swift in Sources */,
 				F58E53AA29DC155B0022E979 /* ChatPreset.swift in Sources */,

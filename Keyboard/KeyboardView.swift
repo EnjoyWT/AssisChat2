@@ -37,7 +37,9 @@ struct KeyboardView: View {
             .cornerRadius(11)
             .padding()
         } else if let receivingMessage = receivingMessage {
-            ReceivingResult(receivingMessage: receivingMessage, insert: insert, replace: replace) {
+            ReceivingResult(receivingMessage: receivingMessage, insert: insert, backLastKeyboard: {
+                self.model.nextkeyboard()
+            }, replace: replace) {
                 self.receivingMessage = nil
             }
             .padding(.top)
@@ -97,6 +99,7 @@ struct KeyboardView: View {
         model.replace(receivingMessage?.content ?? "")
         Haptics.veryLight()
     }
+  
 }
 
 private struct ChatSelector: View {
@@ -159,6 +162,8 @@ private struct ReceivingResult: View {
     @ObservedObject var receivingMessage: Message
 
     let insert: () -> Void
+    let backLastKeyboard: () -> Void
+
     let replace: () -> Void
     let onClose: () -> Void
 
@@ -188,12 +193,22 @@ private struct ReceivingResult: View {
                         .foregroundColor(.secondary)
                         .cornerRadius(.infinity)
                 }
+                Button {
+                    backLastKeyboard()
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .padding(10)
+                        .background(Color.secondaryBackground)
+                        .foregroundColor(.secondary)
+                        .cornerRadius(.infinity)
+                }
             }
 
             ScrollView {
                 VStack(alignment: .leading) {
                     if let content = receivingMessage.content {
                         MessageContent(content: content)
+                        
                     } else if receivingMessage.receiving {
                         ProgressView()
                     } else if let reason = receivingMessage.failedReason {
@@ -222,6 +237,17 @@ private struct ReceivingResult: View {
                         .cornerRadius(.infinity)
                 }
 
+//                Button(action: {
+//                    insert()
+//                }, label: {
+//                    Text("Insert")
+//                        .frame(maxWidth: .infinity)
+//                        .padding(10)
+//                        .background(Color.secondaryBackground)
+//                        .cornerRadius(.infinity)
+//                })
+//                .disabled(receivingMessage.receiving)
+                
                 Button(action: {
                     replace()
                 }, label: {
@@ -233,16 +259,7 @@ private struct ReceivingResult: View {
                 })
                 .disabled(receivingMessage.receiving)
 
-                Button(action: {
-                    insert()
-                }, label: {
-                    Text("Insert")
-                        .frame(maxWidth: .infinity)
-                        .padding(10)
-                        .background(Color.secondaryBackground)
-                        .cornerRadius(.infinity)
-                })
-                .disabled(receivingMessage.receiving)
+           
             }
         }
         .padding(.horizontal)
@@ -252,6 +269,6 @@ private struct ReceivingResult: View {
 
 struct KeyboardView_Previews: PreviewProvider {
     static var previews: some View {
-        KeyboardView(viewController: .init(), model: KeyboardViewModel(insert: { _ in }, replace: { _ in }))
+        KeyboardView(viewController: .init(), model: KeyboardViewModel(insert: { _ in }, replace: { _ in }, nextkeyboard:{}))
     }
 }

@@ -51,6 +51,8 @@ class KeyboardViewController: UIInputViewController {
         } replace: { text in
             self.deleteInputText()
             self.textDocumentProxy.insertText(text)
+        } nextkeyboard: {
+            self.advanceToNextInputMode()
         }
 
         keyboardViewModel = model

@@ -5,11 +5,11 @@
 //  Created by Nooc on 2023-03-05.
 //
 
-import Foundation
 import Combine
 import CoreData
+import Foundation
 
-struct PlainChat {
+struct PlainChatModel {
     let name: String
     let temperature: Chat.Temperature
     let systemMessage: String?
@@ -35,10 +35,10 @@ class ChatFeature: ObservableObject {
     }
 }
 
-
 // MARK: - Data
+
 extension ChatFeature {
-    func createChat(_ plainChat: PlainChat, forModel: String? = nil) {
+    func createChat(_ plainChat: PlainChatModel, forModel: String? = nil) {
         guard plainChat.available else { return }
 
         let chat = Chat(context: essentialFeature.context)
@@ -61,7 +61,7 @@ extension ChatFeature {
         essentialFeature.persistData()
     }
 
-    func updateChat(_ plainChat: PlainChat, for chat: Chat) {
+    func updateChat(_ plainChat: PlainChatModel, for chat: Chat) {
         guard plainChat.available else { return }
 
         chat.rawName = plainChat.name
@@ -75,7 +75,7 @@ extension ChatFeature {
         chat.rawModel = plainChat.model
 
         chat.touch()
-        
+
         essentialFeature.persistData()
     }
 
@@ -114,17 +114,71 @@ extension ChatFeature {
     }
 }
 
+extension ChatFeature {
+    func createChatModel(_ plainChat: PlainChatModel, forModel: String? = nil) {
+        guard plainChat.available else { return }
+
+        let chat = PlainChat(context: essentialFeature.context)
+
+        chat.rawName = plainChat.name
+        chat.rawIcon = plainChat.icon.rawValue
+        chat.color = plainChat.color
+        chat.rawTemperature = plainChat.temperature.rawValue
+        chat.rawSystemMessage = plainChat.systemMessage
+        chat.rawHistoryLengthToSend = plainChat.historyLengthToSend
+        chat.rawMessagePrefix = plainChat.messagePrefix
+        chat.rawAutoCopy = plainChat.autoCopy
+
+        if let model = forModel {
+            chat.rawModel = model
+        } else {
+            chat.rawModel = plainChat.model
+        }
+
+        essentialFeature.persistData()
+    }
+
+    func updateChatModel(_ plainChat: PlainChatModel, for chat: PlainChat) {
+        guard plainChat.available else { return }
+
+        chat.rawName = plainChat.name
+        chat.rawIcon = plainChat.icon.rawValue
+        chat.color = plainChat.color
+        chat.rawTemperature = plainChat.temperature.rawValue
+        chat.rawSystemMessage = plainChat.systemMessage
+        chat.rawHistoryLengthToSend = plainChat.historyLengthToSend
+        chat.rawMessagePrefix = plainChat.messagePrefix
+        chat.rawAutoCopy = plainChat.autoCopy
+        chat.rawModel = plainChat.model
+
+        chat.touch()
+
+        essentialFeature.persistData()
+    }
+
+}
 
 // MARK: - Templates
+
 extension ChatFeature {
-    func createPresets(presets: [PlainChat], forModel: String? = nil) {
+//    func createPresets(presets: [PlainChatModel], forModel: String? = nil) {
+//        // Reversed for correct order
+//        for var template in presets.reversed() {
+//            if let model = forModel {
+//                template.model = model
+//            }
+//
+//            createChat(template)
+//        }
+//    }
+    func createPresets(presets: [PlainChatModel], forModel: String? = nil) {
         // Reversed for correct order
         for var template in presets.reversed() {
             if let model = forModel {
                 template.model = model
             }
 
-            createChat(template)
+            createChatModel(template)
         }
     }
 }

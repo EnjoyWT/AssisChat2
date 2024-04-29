@@ -170,6 +170,9 @@
 "Features" = "特性";
 
 /* No comment provided by engineer. */
+"Preset" = "会话模板";
+
+/* No comment provided by engineer. */
 "General" = "通用";
 
 /* No comment provided by engineer. */
@@ -462,6 +465,9 @@
 
 /* No comment provided by engineer. */
 "Using Share Extension" = "使用分享擴展";
+
+/* No comment provided by engineer. */
+"Preset view Setting" = "会话模板";
 
 /* No comment provided by engineer. */
 "When the result has completed, click the **Replace** button to replace the selected text in the text field with the chat result." = "當結果處理完成後，點擊 **替換** 按鈕，可以將選中的文本替換為處理過後的結果。";

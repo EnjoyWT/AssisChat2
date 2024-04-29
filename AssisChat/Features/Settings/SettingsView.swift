@@ -14,16 +14,15 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-            Section {
-                ProBanner()
-            }
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(Color.clear)
+//            Section {
+//                ProBanner()
+//            }
+//            .listRowInsets(EdgeInsets())
+//            .listRowBackground(Color.clear)
 
             Section("SETTINGS_CHAT") {
                 NavigationLink {
                     ChatSourceConfigView(successAlert: true, backWhenConfigured: false) { _ in
-
                     }
                     .navigationTitle("SETTINGS_CHAT_SOURCE")
                 } label: {
@@ -59,11 +58,13 @@ struct SettingsView: View {
                     }
                 }
             }
-
             Section("Features") {
                 SettingsFeatures()
             }
 
+            Section("Preset") {
+                PresetSectionView()
+            }
 
             Section("SETTINGS_THEME") {
                 SettingsThemeContent()
@@ -80,6 +81,21 @@ struct SettingsView: View {
         .listStyle(.insetGrouped)
         #endif
         .inlineNavigationBar()
+    }
+}
+
+struct PresetSectionView: View {
+    var body: some View {
+        NavigationLink {
+            PresetView()
+        } label: {
+            Label {
+                Text("Preset")
+            } icon: {
+                Image(systemName: "gearshape")
+                    .foregroundColor(.appBlue)
+            }
+        }
     }
 }
 
@@ -143,7 +159,7 @@ struct SettingsThemeContent: View {
                     .foregroundColor(.appIndigo)
             }
         }
-        
+
         #endif
 
         Picker(selection: $settingsFeature.selectedSymbolVariant) {

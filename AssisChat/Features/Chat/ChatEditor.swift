@@ -52,8 +52,8 @@ class ChatEditorModel: ObservableObject {
         self.model = chat.rawModel ?? Chat.OpenAIModel.default.rawValue
     }
 
-    var plain: PlainChat {
-        PlainChat(
+    var plain: PlainChatModel {
+        PlainChatModel(
             name: name.isEmpty ? String(localized: "NEW_CHAT_NAME") : name,
             temperature: temperature,
             systemMessage: systemMessage.count > 0 ? systemMessage : nil,

@@ -13,6 +13,8 @@ import LottieSwiftUI
 
 struct ChatsView: View {
     @State private var logoPlaying = false
+    @AppStorage("isFirstLaunch") private var isFirstLaunch = true
+    @EnvironmentObject var chatFeature: ChatFeature
 
     var body: some View {
         ChatList()
@@ -60,6 +62,12 @@ struct ChatsView: View {
             }
             .onAppear {
                 logoPlaying = true
+                if isFirstLaunch {
+                    
+//                    chatFeature.createPresets(presets: ChatPreset.presetsAutoCreate,, forModel: <#T##String?#>)
+                    
+//                    isFirstLaunch = false
+                }
             }
     }
 }

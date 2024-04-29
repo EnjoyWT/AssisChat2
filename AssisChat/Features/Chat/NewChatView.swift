@@ -17,11 +17,11 @@ struct NewChatView: View {
         List {
             Section("CHAT_CUSTOM") {
                 NavigationLink {
-                    CustomNewChatView() {
+                    CustomNewChatView {
                         dismiss()
                     }
                 } label: {
-                    PresetItem(preset: PlainChat(name: String(localized: "NEW_CHAT_NAME"), temperature: .balanced, systemMessage: String(localized: "NEW_CHAT_NAME"), historyLengthToSend: .defaultHistoryLengthToSend, messagePrefix: nil, autoCopy: false, icon: .default, color: .default, model: Chat.OpenAIModel.default.rawValue))
+                    PresetItem(preset: PlainChatModel(name: String(localized: "NEW_CHAT_NAME"), temperature: .balanced, systemMessage: String(localized: "NEW_CHAT_NAME"), historyLengthToSend: .defaultHistoryLengthToSend, messagePrefix: nil, autoCopy: false, icon: .default, color: .default, model: Chat.OpenAIModel.default.rawValue))
                 }
             }
 
@@ -40,8 +40,8 @@ struct NewChatView: View {
     }
 }
 
-private struct PresetItem: View {
-    let preset: PlainChat
+struct PresetItem: View {
+    let preset: PlainChatModel
 
     var body: some View {
         HStack {
